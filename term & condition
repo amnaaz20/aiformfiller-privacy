@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Terms & Conditions - AIFormFiller</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.7;
+      margin: 0;
+      padding: 0;
+      background: #f5f7fb;
+      color: #222;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 35px;
+      border-radius: 14px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      color: #111827;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      color: #1f2937;
+      margin-top: 30px;
+    }
+
+    .date {
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    a {
+      color: #2563eb;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+      color: #666;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Terms &amp; Conditions for AIFormFiller</h1>
+
+  <p class="date">
+    <strong>Effective Date:</strong> October 1, 2026
+  </p>
+
+  <p>
+    These Terms &amp; Conditions ("Terms") govern your use of the
+    AIFormFiller application ("App"). By using AIFormFiller, you agree
+    to these Terms.
+  </p>
+
+  <h2>1. About AIFormFiller</h2>
+
+  <p>
+    AIFormFiller is an AI-powered form assistance application that helps
+    users understand forms by analyzing images of forms and providing
+    information about fields and what information may need to be entered.
+  </p>
+
+  <h2>2. Use of the App</h2>
+
+  <p>
+    You may use AIFormFiller for lawful and legitimate purposes.
+    You are responsible for the information and images you choose to
+    submit through the App.
+  </p>
+
+  <h2>3. Form Images and AI Processing</h2>
+
+  <p>
+    AIFormFiller may process images selected or captured by the user
+    through Google's Gemini API to provide AI-powered form analysis.
+  </p>
+
+  <p>
+    AI-generated information is provided as assistance and may not
+    always be accurate, complete, or appropriate for every form.
+  </p>
+
+  <p>
+    You should independently review AI-generated information before
+    using it in an official, legal, financial, medical, government,
+    employment, or other important document.
+  </p>
+
+  <h2>4. User Responsibility</h2>
+
+  <p>
+    You are responsible for verifying the information provided by the
+    App before entering or submitting it on any official form.
+  </p>
+
+  <p>
+    You should not submit information that you are not authorized to
+    use or disclose.
+  </p>
+
+  <h2>5. Prohibited Use</h2>
+
+  <p>
+    You must not use AIFormFiller for unlawful activities, fraud,
+    impersonation, or to intentionally provide false information on
+    official documents.
+  </p>
+
+  <p>
+    You must not attempt to interfere with, damage, reverse engineer,
+    or misuse the App or its supporting services.
+  </p>
+
+  <h2>6. Third-Party Services</h2>
+
+  <p>
+    AIFormFiller uses Google's Gemini API for AI-powered functionality.
+    Your use of features that rely on third-party services may also be
+    subject to the applicable terms and policies of those services.
+  </p>
+
+  <h2>7. Availability</h2>
+
+  <p>
+    We aim to keep AIFormFiller available and functional, but we do not
+    guarantee that the App or its AI-powered features will always be
+    available, uninterrupted, or error-free.
+  </p>
+
+  <h2>8. AI-Generated Results</h2>
+
+  <p>
+    AI-generated results are intended to provide general assistance.
+    They should not be considered professional, legal, financial,
+    medical, or other specialized advice.
+  </p>
+
+  <h2>9. Privacy</h2>
+
+  <p>
+    Your use of AIFormFiller is also subject to our
+    <a href="index.html">Privacy Policy</a>.
+  </p>
+
+  <h2>10. Changes to the App</h2>
+
+  <p>
+    We may modify, update, add, or remove features from AIFormFiller
+    from time to time.
+  </p>
+
+  <h2>11. Changes to These Terms</h2>
+
+  <p>
+    These Terms may be updated when the App's functionality or services
+    change. Updated Terms will be published on this page with a revised
+    effective date.
+  </p>
+
+  <h2>12. Contact Us</h2>
+
+  <p>
+    If you have questions about these Terms &amp; Conditions, contact us:
+  </p>
+
+  <p>
+    <strong>App Name:</strong> AIFormFiller<br>
+    <strong>Developer:</strong> Aman<br>
+    <strong>Email:</strong>
+    <a href="mailto:aman3sali786@gmail.com">
+      aman3sali786@gmail.com
+    </a>
+  </p>
+
+  <footer>
+    © 2026 AIFormFiller. All rights reserved.
+  </footer>
+
+</div>
+
+</body>
+</html>
