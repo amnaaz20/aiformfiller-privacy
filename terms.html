@@ -7,194 +7,649 @@
   <title>Terms & Conditions - AIFormFiller</title>
 
   <style>
+    :root {
+      --bg: #070b14;
+      --card: rgba(17, 25, 40, 0.78);
+      --card-hover: rgba(22, 32, 51, 0.9);
+
+      --text: #f8fafc;
+      --text-secondary: #aab5c7;
+      --text-muted: #78859a;
+
+      --accent: #6c63ff;
+      --accent-light: #9d98ff;
+      --accent-glow: rgba(108, 99, 255, 0.35);
+
+      --border: rgba(255, 255, 255, 0.09);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.7;
       margin: 0;
       padding: 0;
-      background: #f5f7fb;
-      color: #222;
+
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+      color: var(--text);
+
+      background:
+        radial-gradient(
+          circle at 15% 10%,
+          rgba(108, 99, 255, 0.18),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 85% 20%,
+          rgba(70, 120, 255, 0.12),
+          transparent 28%
+        ),
+        linear-gradient(
+          135deg,
+          #050810,
+          #080d18 50%,
+          #050811
+        );
+
+      min-height: 100vh;
     }
 
     .container {
-      max-width: 850px;
-      margin: 40px auto;
-      background: #ffffff;
-      padding: 35px;
-      border-radius: 14px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      width: min(900px, calc(100% - 32px));
+      margin: auto;
+      padding: 50px 0 40px;
+    }
+
+    /* Header */
+
+    .header {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .logo {
+      width: 64px;
+      height: 64px;
+
+      margin: 0 auto 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 18px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--accent),
+          #4f8cff
+        );
+
+      box-shadow:
+        0 12px 35px var(--accent-glow);
+
+      font-size: 24px;
+      font-weight: 800;
+      color: white;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+
+      padding: 7px 14px;
+
+      border-radius: 50px;
+
+      background: rgba(108, 99, 255, 0.12);
+
+      border: 1px solid rgba(108, 99, 255, 0.25);
+
+      color: var(--accent-light);
+
+      font-size: 13px;
+      font-weight: 600;
     }
 
     h1 {
-      color: #111827;
-      margin-bottom: 5px;
-    }
+      margin: 18px 0 8px;
 
-    h2 {
-      color: #1f2937;
-      margin-top: 30px;
+      font-size: clamp(32px, 6vw, 48px);
+
+      line-height: 1.15;
+
+      letter-spacing: -1px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #ffffff,
+          #b8b4ff
+        );
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .date {
-      color: #666;
-      margin-bottom: 30px;
+      color: var(--text-muted);
+
+      font-size: 14px;
+
+      margin: 0;
     }
+
+    /* Sections */
+
+    .section {
+      position: relative;
+
+      margin-bottom: 18px;
+
+      padding: 27px;
+
+      background: var(--card);
+
+      border: 1px solid var(--border);
+
+      border-radius: 22px;
+
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+
+      box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.18);
+
+      transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .section:hover {
+      transform: translateY(-2px);
+
+      background: var(--card-hover);
+
+      border-color:
+        rgba(108, 99, 255, 0.28);
+    }
+
+    .section-number {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      width: 38px;
+      height: 38px;
+
+      margin-bottom: 14px;
+
+      border-radius: 12px;
+
+      background:
+        rgba(108, 99, 255, 0.12);
+
+      border:
+        1px solid rgba(108, 99, 255, 0.2);
+
+      color: var(--accent-light);
+
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+
+      color: #ffffff;
+
+      font-size: 21px;
+
+      letter-spacing: -0.2px;
+    }
+
+    p {
+      margin: 0 0 12px;
+
+      color: var(--text-secondary);
+
+      font-size: 15.5px;
+
+      line-height: 1.75;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      color: #ffffff;
+    }
+
+    /* Links */
 
     a {
-      color: #2563eb;
+      color: var(--accent-light);
+
+      text-decoration: none;
+
+      font-weight: 600;
+
+      transition: color 0.2s ease;
     }
 
+    a:hover {
+      color: #c1beff;
+      text-decoration: underline;
+    }
+
+    /* Contact */
+
+    .contact {
+      margin-top: 8px;
+
+      padding: 20px;
+
+      border-radius: 16px;
+
+      background:
+        rgba(255, 255, 255, 0.035);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.07);
+
+      color: var(--text-secondary);
+
+      line-height: 2;
+    }
+
+    /* Footer */
+
     footer {
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid #ddd;
-      color: #666;
-      font-size: 14px;
+      margin-top: 35px;
+
+      padding-top: 22px;
+
+      border-top:
+        1px solid rgba(255, 255, 255, 0.08);
+
+      text-align: center;
+
+      color: var(--text-muted);
+
+      font-size: 13px;
+    }
+
+    /* Mobile */
+
+    @media (max-width: 600px) {
+
+      .container {
+        width: min(100% - 22px, 900px);
+
+        padding: 30px 0 25px;
+      }
+
+      .header {
+        margin-bottom: 25px;
+      }
+
+      .logo {
+        width: 58px;
+        height: 58px;
+
+        border-radius: 16px;
+
+        font-size: 21px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .section {
+        padding: 21px;
+
+        border-radius: 18px;
+      }
+
+      h2 {
+        font-size: 19px;
+      }
+
+      p {
+        font-size: 15px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<div class="container">
+  <main class="container">
 
-  <h1>Terms &amp; Conditions for AIFormFiller</h1>
+    <!-- Header -->
 
-  <p class="date">
-    <strong>Effective Date:</strong> October 1, 2026
-  </p>
+    <header class="header">
 
-  <p>
-    These Terms &amp; Conditions ("Terms") govern your use of the
-    AIFormFiller application ("App"). By using AIFormFiller, you agree
-    to these Terms.
-  </p>
+      <div class="logo">
+        AI
+      </div>
 
-  <h2>1. About AIFormFiller</h2>
+      <span class="badge">
+        AIFormFiller Official Terms
+      </span>
 
-  <p>
-    AIFormFiller is an AI-powered form assistance application that helps
-    users understand forms by analyzing images of forms and providing
-    information about fields and what information may need to be entered.
-  </p>
+      <h1>
+        Terms &amp; Conditions
+      </h1>
 
-  <h2>2. Use of the App</h2>
+      <p class="date">
+        <strong>Effective Date:</strong> October 1, 2026
+      </p>
 
-  <p>
-    You may use AIFormFiller for lawful and legitimate purposes.
-    You are responsible for the information and images you choose to
-    submit through the App.
-  </p>
+    </header>
 
-  <h2>3. Form Images and AI Processing</h2>
 
-  <p>
-    AIFormFiller may process images selected or captured by the user
-    through Google's Gemini API to provide AI-powered form analysis.
-  </p>
+    <!-- Introduction -->
 
-  <p>
-    AI-generated information is provided as assistance and may not
-    always be accurate, complete, or appropriate for every form.
-  </p>
+    <section class="section">
 
-  <p>
-    You should independently review AI-generated information before
-    using it in an official, legal, financial, medical, government,
-    employment, or other important document.
-  </p>
+      <p>
+        These Terms &amp; Conditions ("Terms") govern your use of the
+        AIFormFiller application ("App"). By using AIFormFiller, you agree
+        to these Terms.
+      </p>
 
-  <h2>4. User Responsibility</h2>
+    </section>
 
-  <p>
-    You are responsible for verifying the information provided by the
-    App before entering or submitting it on any official form.
-  </p>
 
-  <p>
-    You should not submit information that you are not authorized to
-    use or disclose.
-  </p>
+    <!-- 1 -->
 
-  <h2>5. Prohibited Use</h2>
+    <section class="section">
 
-  <p>
-    You must not use AIFormFiller for unlawful activities, fraud,
-    impersonation, or to intentionally provide false information on
-    official documents.
-  </p>
+      <div class="section-number">01</div>
 
-  <p>
-    You must not attempt to interfere with, damage, reverse engineer,
-    or misuse the App or its supporting services.
-  </p>
+      <h2>
+        About AIFormFiller
+      </h2>
 
-  <h2>6. Third-Party Services</h2>
+      <p>
+        AIFormFiller is an AI-powered form assistance application that helps
+        users understand forms by analyzing images of forms and providing
+        information about fields and what information may need to be entered.
+      </p>
 
-  <p>
-    AIFormFiller uses Google's Gemini API for AI-powered functionality.
-    Your use of features that rely on third-party services may also be
-    subject to the applicable terms and policies of those services.
-  </p>
+    </section>
 
-  <h2>7. Availability</h2>
 
-  <p>
-    We aim to keep AIFormFiller available and functional, but we do not
-    guarantee that the App or its AI-powered features will always be
-    available, uninterrupted, or error-free.
-  </p>
+    <!-- 2 -->
 
-  <h2>8. AI-Generated Results</h2>
+    <section class="section">
 
-  <p>
-    AI-generated results are intended to provide general assistance.
-    They should not be considered professional, legal, financial,
-    medical, or other specialized advice.
-  </p>
+      <div class="section-number">02</div>
 
-  <h2>9. Privacy</h2>
+      <h2>
+        Use of the App
+      </h2>
 
-  <p>
-    Your use of AIFormFiller is also subject to our
-    <a href="index.html">Privacy Policy</a>.
-  </p>
+      <p>
+        You may use AIFormFiller for lawful and legitimate purposes.
+        You are responsible for the information and images you choose to
+        submit through the App.
+      </p>
 
-  <h2>10. Changes to the App</h2>
+    </section>
 
-  <p>
-    We may modify, update, add, or remove features from AIFormFiller
-    from time to time.
-  </p>
 
-  <h2>11. Changes to These Terms</h2>
+    <!-- 3 -->
 
-  <p>
-    These Terms may be updated when the App's functionality or services
-    change. Updated Terms will be published on this page with a revised
-    effective date.
-  </p>
+    <section class="section">
 
-  <h2>12. Contact Us</h2>
+      <div class="section-number">03</div>
 
-  <p>
-    If you have questions about these Terms &amp; Conditions, contact us:
-  </p>
+      <h2>
+        Form Images and AI Processing
+      </h2>
 
-  <p>
-    <strong>App Name:</strong> AIFormFiller<br>
-    <strong>Developer:</strong> Aman<br>
-    <strong>Email:</strong>
-    <a href="mailto:aman3sali786@gmail.com">
-      aman35ali786@gmail.com
-    </a>
-  </p>
+      <p>
+        AIFormFiller may process images selected or captured by the user
+        through Google's Gemini API to provide AI-powered form analysis.
+      </p>
 
-  <footer>
-    © 2026 AIFormFiller. All rights reserved.
-  </footer>
+      <p>
+        AI-generated information is provided as assistance and may not
+        always be accurate, complete, or appropriate for every form.
+      </p>
 
-</div>
+      <p>
+        You should independently review AI-generated information before
+        using it in an official, legal, financial, medical, government,
+        employment, or other important document.
+      </p>
+
+    </section>
+
+
+    <!-- 4 -->
+
+    <section class="section">
+
+      <div class="section-number">04</div>
+
+      <h2>
+        User Responsibility
+      </h2>
+
+      <p>
+        You are responsible for verifying the information provided by the
+        App before entering or submitting it on any official form.
+      </p>
+
+      <p>
+        You should not submit information that you are not authorized to
+        use or disclose.
+      </p>
+
+    </section>
+
+
+    <!-- 5 -->
+
+    <section class="section">
+
+      <div class="section-number">05</div>
+
+      <h2>
+        Prohibited Use
+      </h2>
+
+      <p>
+        You must not use AIFormFiller for unlawful activities, fraud,
+        impersonation, or to intentionally provide false information on
+        official documents.
+      </p>
+
+      <p>
+        You must not attempt to interfere with, damage, reverse engineer,
+        or misuse the App or its supporting services.
+      </p>
+
+    </section>
+
+
+    <!-- 6 -->
+
+    <section class="section">
+
+      <div class="section-number">06</div>
+
+      <h2>
+        Third-Party Services
+      </h2>
+
+      <p>
+        AIFormFiller uses Google's Gemini API for AI-powered functionality.
+        Your use of features that rely on third-party services may also be
+        subject to the applicable terms and policies of those services.
+      </p>
+
+    </section>
+
+
+    <!-- 7 -->
+
+    <section class="section">
+
+      <div class="section-number">07</div>
+
+      <h2>
+        Availability
+      </h2>
+
+      <p>
+        We aim to keep AIFormFiller available and functional, but we do not
+        guarantee that the App or its AI-powered features will always be
+        available, uninterrupted, or error-free.
+      </p>
+
+    </section>
+
+
+    <!-- 8 -->
+
+    <section class="section">
+
+      <div class="section-number">08</div>
+
+      <h2>
+        AI-Generated Results
+      </h2>
+
+      <p>
+        AI-generated results are intended to provide general assistance.
+        They should not be considered professional, legal, financial,
+        medical, or other specialized advice.
+      </p>
+
+    </section>
+
+
+    <!-- 9 -->
+
+    <section class="section">
+
+      <div class="section-number">09</div>
+
+      <h2>
+        Privacy
+      </h2>
+
+      <p>
+        Your use of AIFormFiller is also subject to our
+        <a href="index.html">
+          Privacy Policy
+        </a>.
+      </p>
+
+    </section>
+
+
+    <!-- 10 -->
+
+    <section class="section">
+
+      <div class="section-number">10</div>
+
+      <h2>
+        Changes to the App
+      </h2>
+
+      <p>
+        We may modify, update, add, or remove features from AIFormFiller
+        from time to time.
+      </p>
+
+    </section>
+
+
+    <!-- 11 -->
+
+    <section class="section">
+
+      <div class="section-number">11</div>
+
+      <h2>
+        Changes to These Terms
+      </h2>
+
+      <p>
+        These Terms may be updated when the App's functionality or services
+        change. Updated Terms will be published on this page with a revised
+        effective date.
+      </p>
+
+    </section>
+
+
+    <!-- 12 -->
+
+    <section class="section">
+
+      <div class="section-number">12</div>
+
+      <h2>
+        Contact Us
+      </h2>
+
+      <p>
+        If you have questions about these Terms &amp; Conditions, contact us:
+      </p>
+
+      <div class="contact">
+
+        <strong>App Name:</strong>
+        AIFormFiller
+        <br>
+
+        <strong>Developer:</strong>
+        Aman
+        <br>
+
+        <strong>Email:</strong>
+
+        <a href="mailto:aman35ali786@gmail.com">
+          aman35ali786@gmail.com
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+      © 2026 AIFormFiller. All rights reserved.
+    </footer>
+
+  </main>
 
 </body>
 </html>
