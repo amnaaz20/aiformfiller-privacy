@@ -3,139 +3,535 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>AIFormFiller - Refund Policy</title>
 
   <style>
+    :root {
+      --bg: #070b14;
+      --card: rgba(17, 25, 40, 0.78);
+      --card-hover: rgba(22, 32, 51, 0.9);
+
+      --text: #f8fafc;
+      --text-secondary: #aab5c7;
+      --text-muted: #78859a;
+
+      --accent: #6c63ff;
+      --accent-light: #9d98ff;
+      --accent-glow: rgba(108, 99, 255, 0.35);
+
+      --border: rgba(255, 255, 255, 0.09);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.7;
       margin: 0;
       padding: 0;
-      background: #f5f7fb;
-      color: #222;
+
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+      color: var(--text);
+
+      background:
+        radial-gradient(
+          circle at 15% 10%,
+          rgba(108, 99, 255, 0.18),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 85% 20%,
+          rgba(70, 120, 255, 0.12),
+          transparent 28%
+        ),
+        linear-gradient(
+          135deg,
+          #050810,
+          #080d18 50%,
+          #050811
+        );
+
+      min-height: 100vh;
     }
 
     .container {
-      max-width: 850px;
-      margin: 40px auto;
-      background: #fff;
-      padding: 35px;
-      border-radius: 14px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      width: min(900px, calc(100% - 32px));
+      margin: auto;
+      padding: 50px 0 40px;
+    }
+
+    /* Header */
+
+    .header {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .logo {
+      width: 64px;
+      height: 64px;
+
+      margin: 0 auto 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 18px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--accent),
+          #4f8cff
+        );
+
+      box-shadow:
+        0 12px 35px var(--accent-glow);
+
+      font-size: 24px;
+      font-weight: 800;
+      color: white;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+
+      padding: 7px 14px;
+
+      border-radius: 50px;
+
+      background: rgba(108, 99, 255, 0.12);
+
+      border: 1px solid rgba(108, 99, 255, 0.25);
+
+      color: var(--accent-light);
+
+      font-size: 13px;
+      font-weight: 600;
     }
 
     h1 {
-      color: #111827;
-    }
+      margin: 18px 0 8px;
 
-    h2 {
-      color: #1f2937;
-      margin-top: 30px;
+      font-size: clamp(32px, 6vw, 48px);
+
+      line-height: 1.15;
+
+      letter-spacing: -1px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #ffffff,
+          #b8b4ff
+        );
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .date {
-      color: #666;
+      color: var(--text-muted);
+
+      font-size: 14px;
+
+      margin: 0;
     }
 
-    footer {
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid #ddd;
-      color: #666;
+    /* Sections */
+
+    .section {
+      position: relative;
+
+      margin-bottom: 18px;
+
+      padding: 27px;
+
+      background: var(--card);
+
+      border: 1px solid var(--border);
+
+      border-radius: 22px;
+
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+
+      box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.18);
+
+      transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .section:hover {
+      transform: translateY(-2px);
+
+      background: var(--card-hover);
+
+      border-color:
+        rgba(108, 99, 255, 0.28);
+    }
+
+    .section-number {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      width: 38px;
+      height: 38px;
+
+      margin-bottom: 14px;
+
+      border-radius: 12px;
+
+      background:
+        rgba(108, 99, 255, 0.12);
+
+      border:
+        1px solid rgba(108, 99, 255, 0.2);
+
+      color: var(--accent-light);
+
       font-size: 14px;
+      font-weight: 700;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+
+      color: #ffffff;
+
+      font-size: 21px;
+
+      letter-spacing: -0.2px;
+    }
+
+    p {
+      margin: 0 0 12px;
+
+      color: var(--text-secondary);
+
+      font-size: 15.5px;
+
+      line-height: 1.75;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      color: #ffffff;
+    }
+
+    /* Links */
+
+    a {
+      color: var(--accent-light);
+
+      text-decoration: none;
+
+      font-weight: 600;
+
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: #c1beff;
+      text-decoration: underline;
+    }
+
+    /* Contact */
+
+    .contact {
+      margin-top: 8px;
+
+      padding: 20px;
+
+      border-radius: 16px;
+
+      background:
+        rgba(255, 255, 255, 0.035);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.07);
+
+      color: var(--text-secondary);
+
+      line-height: 2;
+    }
+
+    /* Footer */
+
+    footer {
+      margin-top: 35px;
+
+      padding-top: 22px;
+
+      border-top:
+        1px solid rgba(255, 255, 255, 0.08);
+
+      text-align: center;
+
+      color: var(--text-muted);
+
+      font-size: 13px;
+    }
+
+    /* Mobile */
+
+    @media (max-width: 600px) {
+
+      .container {
+        width: min(100% - 22px, 900px);
+
+        padding: 30px 0 25px;
+      }
+
+      .header {
+        margin-bottom: 25px;
+      }
+
+      .logo {
+        width: 58px;
+        height: 58px;
+
+        border-radius: 16px;
+
+        font-size: 21px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .section {
+        padding: 21px;
+
+        border-radius: 18px;
+      }
+
+      h2 {
+        font-size: 19px;
+      }
+
+      p {
+        font-size: 15px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<div class="container">
+  <main class="container">
 
-  <h1>Refund Policy for AIFormFiller</h1>
+    <!-- Header -->
 
-  <p class="date">
-    <strong>Effective Date:</strong> October 1, 2026
-  </p>
+    <header class="header">
 
-  <p>
-    This Refund Policy explains how refunds are handled for purchases
-    made through the AIFormFiller application.
-  </p>
+      <div class="logo">
+        AI
+      </div>
 
-  <h2>1. Google Play Purchases</h2>
+      <span class="badge">
+        AIFormFiller Official Policy
+      </span>
 
-  <p>
-    If you purchase an application, subscription, or other digital
-    product through Google Play, payment processing and refund requests
-    are generally handled according to Google's applicable Google Play
-    policies and procedures.
-  </p>
+      <h1>
+        Refund Policy
+      </h1>
 
-  <p>
-    Users may request a refund through the Google Play refund process
-    where eligible.
-  </p>
+      <p class="date">
+        <strong>Effective Date:</strong> October 1, 2026
+      </p>
 
-  <h2>2. Refund Eligibility</h2>
+    </header>
 
-  <p>
-    Refund eligibility may depend on the type of purchase, the time
-    since the purchase, applicable Google Play policies, and other
-    circumstances determined by Google.
-  </p>
 
-  <p>
-    Submitting a refund request does not guarantee that a refund will
-    be approved.
-  </p>
+    <!-- Introduction -->
 
-  <h2>3. Subscription Cancellation</h2>
+    <section class="section">
 
-  <p>
-    If AIFormFiller offers subscriptions through Google Play, users can
-    manage or cancel their subscriptions through their Google Play
-    account according to Google's subscription management procedures.
-  </p>
+      <p>
+        This Refund Policy explains how refunds are handled for purchases
+        made through the AIFormFiller application.
+      </p>
 
-  <p>
-    Cancelling a subscription generally prevents future renewals but
-    does not necessarily result in an automatic refund for a previous
-    payment.
-  </p>
+    </section>
 
-  <h2>4. Unauthorized Purchases</h2>
 
-  <p>
-    If you believe a purchase was made without your authorization,
-    please review your Google Play purchase history and use Google's
-    available support and refund options.
-  </p>
+    <!-- 1 -->
 
-  <h2>5. Contact Us</h2>
+    <section class="section">
 
-  <p>
-    If you have questions about this Refund Policy, you can contact us:
-  </p>
+      <div class="section-number">01</div>
 
-  <p>
-    <strong>App Name:</strong> AIFormFiller<br>
-    <strong>Developer:</strong> Aman<br>
-    <strong>Email:</strong> aman35ali786@gmail.com
-  </p>
+      <h2>
+        Google Play Purchases
+      </h2>
 
-  <h2>6. Changes to This Refund Policy</h2>
+      <p>
+        If you purchase an application, subscription, or other digital
+        product through Google Play, payment processing and refund requests
+        are generally handled according to Google's applicable Google Play
+        policies and procedures.
+      </p>
 
-  <p>
-    We may update this Refund Policy if our application's payment
-    features or refund procedures change. Any updated version will be
-    published on this page with a revised effective date.
-  </p>
+      <p>
+        Users may request a refund through the Google Play refund process
+        where eligible.
+      </p>
 
-  <footer>
-    © 2026 AIFormFiller. All rights reserved.
-  </footer>
+    </section>
 
-</div>
+
+    <!-- 2 -->
+
+    <section class="section">
+
+      <div class="section-number">02</div>
+
+      <h2>
+        Refund Eligibility
+      </h2>
+
+      <p>
+        Refund eligibility may depend on the type of purchase, the time
+        since the purchase, applicable Google Play policies, and other
+        circumstances determined by Google.
+      </p>
+
+      <p>
+        Submitting a refund request does not guarantee that a refund will
+        be approved.
+      </p>
+
+    </section>
+
+
+    <!-- 3 -->
+
+    <section class="section">
+
+      <div class="section-number">03</div>
+
+      <h2>
+        Subscription Cancellation
+      </h2>
+
+      <p>
+        If AIFormFiller offers subscriptions through Google Play, users can
+        manage or cancel their subscriptions through their Google Play
+        account according to Google's subscription management procedures.
+      </p>
+
+      <p>
+        Cancelling a subscription generally prevents future renewals but
+        does not necessarily result in an automatic refund for a previous
+        payment.
+      </p>
+
+    </section>
+
+
+    <!-- 4 -->
+
+    <section class="section">
+
+      <div class="section-number">04</div>
+
+      <h2>
+        Unauthorized Purchases
+      </h2>
+
+      <p>
+        If you believe a purchase was made without your authorization,
+        please review your Google Play purchase history and use Google's
+        available support and refund options.
+      </p>
+
+    </section>
+
+
+    <!-- 5 -->
+
+    <section class="section">
+
+      <div class="section-number">05</div>
+
+      <h2>
+        Contact Us
+      </h2>
+
+      <p>
+        If you have questions about this Refund Policy, you can contact us:
+      </p>
+
+      <div class="contact">
+
+        <strong>App Name:</strong>
+        AIFormFiller
+        <br>
+
+        <strong>Developer:</strong>
+        Aman
+        <br>
+
+        <strong>Email:</strong>
+        <a href="mailto:aman35ali786@gmail.com">
+          aman35ali786@gmail.com
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- 6 -->
+
+    <section class="section">
+
+      <div class="section-number">06</div>
+
+      <h2>
+        Changes to This Refund Policy
+      </h2>
+
+      <p>
+        We may update this Refund Policy if our application's payment
+        features or refund procedures change. Any updated version will be
+        published on this page with a revised effective date.
+      </p>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+      © 2026 AIFormFiller. All rights reserved.
+    </footer>
+
+  </main>
 
 </body>
 </html>
