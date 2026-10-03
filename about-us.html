@@ -7,118 +7,538 @@
   <title>About Us - AIFormFiller</title>
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.7;
-      margin: 0;
-      padding: 0;
-      background: #f5f7fb;
-      color: #222;
+    /* =========================
+       AIFormFiller Theme
+       ========================= */
+
+    :root {
+      --bg: #070b14;
+      --bg-secondary: #0d1422;
+      --card: rgba(17, 25, 40, 0.78);
+      --card-hover: rgba(22, 32, 51, 0.9);
+
+      --text: #f8fafc;
+      --text-secondary: #aab5c7;
+      --text-muted: #78859a;
+
+      --accent: #6c63ff;
+      --accent-light: #8b85ff;
+      --accent-glow: rgba(108, 99, 255, 0.35);
+
+      --border: rgba(255, 255, 255, 0.09);
+      --radius: 22px;
     }
 
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+      color: var(--text);
+
+      background:
+        radial-gradient(
+          circle at 15% 10%,
+          rgba(108, 99, 255, 0.18),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 85% 20%,
+          rgba(70, 120, 255, 0.12),
+          transparent 28%
+        ),
+        linear-gradient(
+          135deg,
+          #050810,
+          #080d18 50%,
+          #050811
+        );
+
+      min-height: 100vh;
+    }
+
+    /* =========================
+       Main Container
+       ========================= */
+
     .container {
-      max-width: 850px;
-      margin: 40px auto;
-      background: #ffffff;
-      padding: 35px;
-      border-radius: 14px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      width: min(900px, calc(100% - 32px));
+      margin: auto;
+      padding: 50px 0 40px;
+    }
+
+    /* =========================
+       Header
+       ========================= */
+
+    .header {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .logo {
+      width: 64px;
+      height: 64px;
+
+      margin: 0 auto 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 18px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--accent),
+          #4f8cff
+        );
+
+      box-shadow:
+        0 12px 35px var(--accent-glow);
+
+      font-size: 28px;
+      font-weight: 800;
+      color: white;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+
+      padding: 7px 14px;
+
+      border-radius: 50px;
+
+      background: rgba(108, 99, 255, 0.12);
+
+      border: 1px solid rgba(108, 99, 255, 0.25);
+
+      color: #a9a4ff;
+
+      font-size: 13px;
+      font-weight: 600;
     }
 
     h1 {
-      color: #111827;
-      margin-bottom: 10px;
-    }
+      margin: 18px 0 8px;
 
-    h2 {
-      color: #1f2937;
-      margin-top: 30px;
+      font-size: clamp(32px, 6vw, 48px);
+
+      line-height: 1.15;
+
+      letter-spacing: -1px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #ffffff,
+          #b8b4ff
+        );
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .intro {
-      font-size: 18px;
-      color: #555;
+      max-width: 650px;
+
+      margin: 0 auto;
+
+      color: var(--text-secondary);
+
+      font-size: 17px;
+
+      line-height: 1.7;
     }
+
+    /* =========================
+       Cards
+       ========================= */
+
+    .card {
+      position: relative;
+
+      margin-bottom: 18px;
+
+      padding: 28px;
+
+      background: var(--card);
+
+      border: 1px solid var(--border);
+
+      border-radius: var(--radius);
+
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+
+      box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.18);
+
+      transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+
+      background: var(--card-hover);
+
+      border-color:
+        rgba(108, 99, 255, 0.28);
+    }
+
+    .card-icon {
+      width: 44px;
+      height: 44px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-bottom: 16px;
+
+      border-radius: 14px;
+
+      background:
+        rgba(108, 99, 255, 0.12);
+
+      border:
+        1px solid rgba(108, 99, 255, 0.2);
+
+      font-size: 21px;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+
+      color: #ffffff;
+
+      font-size: 21px;
+
+      letter-spacing: -0.2px;
+    }
+
+    p {
+      margin: 0 0 12px;
+
+      color: var(--text-secondary);
+
+      font-size: 15.5px;
+
+      line-height: 1.75;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      color: #ffffff;
+    }
+
+    /* =========================
+       Links
+       ========================= */
+
+    a {
+      color: #9d98ff;
+
+      text-decoration: none;
+
+      font-weight: 600;
+
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: #c1beff;
+
+      text-decoration: underline;
+    }
+
+    /* =========================
+       Contact Card
+       ========================= */
 
     .contact {
-      background: #f3f4f6;
-      padding: 18px;
-      border-radius: 10px;
-      margin-top: 20px;
+      margin-top: 8px;
+
+      padding: 20px;
+
+      border-radius: 16px;
+
+      background:
+        rgba(255, 255, 255, 0.035);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.07);
+
+      color: var(--text-secondary);
+
+      line-height: 2;
     }
 
-    footer {
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid #ddd;
-      color: #666;
-      font-size: 14px;
+    .contact strong {
+      color: #ffffff;
     }
+
+    /* =========================
+       Footer
+       ========================= */
+
+    footer {
+      margin-top: 35px;
+
+      padding-top: 22px;
+
+      border-top:
+        1px solid rgba(255, 255, 255, 0.08);
+
+      text-align: center;
+
+      color: var(--text-muted);
+
+      font-size: 13px;
+    }
+
+    /* =========================
+       Mobile
+       ========================= */
+
+    @media (max-width: 600px) {
+
+      .container {
+        width: min(100% - 22px, 900px);
+
+        padding:
+          30px 0 25px;
+      }
+
+      .header {
+        margin-bottom: 25px;
+      }
+
+      .logo {
+        width: 58px;
+        height: 58px;
+
+        border-radius: 16px;
+
+        font-size: 24px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .intro {
+        font-size: 15px;
+      }
+
+      .card {
+        padding: 21px;
+
+        border-radius: 18px;
+      }
+
+      h2 {
+        font-size: 19px;
+      }
+
+      p {
+        font-size: 15px;
+      }
+    }
+
   </style>
 </head>
 
+
 <body>
 
-<div class="container">
+  <main class="container">
 
-  <h1>About AIFormFiller</h1>
+    <!-- Header -->
 
-  <p class="intro">
-    AIFormFiller is an AI-powered form assistance application designed
-    to make understanding and completing forms easier.
-  </p>
+    <header class="header">
 
-  <h2>What is AIFormFiller?</h2>
+      <div class="logo">
+        AI
+      </div>
 
-  <p>
-    AIFormFiller helps users understand blank or unfamiliar forms.
-    Users can select or capture an image of a form, and the application
-    uses AI-powered analysis to identify form fields and explain what
-    information may need to be entered.
-  </p>
+      <span class="badge">
+        AIFormFiller
+      </span>
 
-  <h2>Our Goal</h2>
+      <h1>
+        About AIFormFiller
+      </h1>
 
-  <p>
-    Our goal is to make form filling simpler, clearer, and more
-    convenient by using modern AI technology to provide helpful
-    explanations about form fields.
-  </p>
+      <p class="intro">
+        AIFormFiller is an AI-powered form assistance application
+        designed to make understanding and completing forms easier,
+        clearer, and more convenient.
+      </p>
 
-  <h2>AI-Powered Assistance</h2>
+    </header>
 
-  <p>
-    AIFormFiller uses Google's Gemini API for AI-powered image analysis
-    and form assistance. When a user chooses to use the AI feature,
-    the relevant image and instructions may be processed through
-    Google's Gemini service.
-  </p>
 
-  <h2>Privacy</h2>
+    <!-- What is AIFormFiller -->
 
-  <p>
-    We respect user privacy and aim to minimize unnecessary data
-    collection. For information about how information is handled,
-    please review our
-    <a href="index.html">Privacy Policy</a>.
-  </p>
+    <section class="card">
 
-  <h2>Contact Us</h2>
+      <div class="card-icon">
+        ✨
+      </div>
 
-  <div class="contact">
-    <strong>App Name:</strong> AIFormFiller<br>
-    <strong>Developer:</strong> Aman<br>
-    <strong>Email:</strong>
-    <a href="mailto:aman3sali786@gmail.com">
-      aman35ali786@gmail.com
-    </a>
-  </div>
+      <h2>
+        What is AIFormFiller?
+      </h2>
 
-  <footer>
-    © 2026 AIFormFiller. All rights reserved.
-  </footer>
+      <p>
+        AIFormFiller helps users understand blank or unfamiliar forms.
+        Users can select or capture an image of a form, and the
+        application uses AI-powered analysis to identify form fields
+        and explain what information may need to be entered.
+      </p>
 
-</div>
+    </section>
+
+
+    <!-- Our Goal -->
+
+    <section class="card">
+
+      <div class="card-icon">
+        🎯
+      </div>
+
+      <h2>
+        Our Goal
+      </h2>
+
+      <p>
+        Our goal is to make form filling simpler, clearer, and more
+        convenient by using modern AI technology to provide helpful
+        explanations about form fields.
+      </p>
+
+    </section>
+
+
+    <!-- AI Assistance -->
+
+    <section class="card">
+
+      <div class="card-icon">
+        🤖
+      </div>
+
+      <h2>
+        AI-Powered Assistance
+      </h2>
+
+      <p>
+        AIFormFiller uses Google's Gemini API for AI-powered image
+        analysis and form assistance.
+      </p>
+
+      <p>
+        When a user chooses to use the AI feature, the relevant image
+        and instructions may be processed through Google's Gemini
+        service.
+      </p>
+
+    </section>
+
+
+    <!-- Privacy -->
+
+    <section class="card">
+
+      <div class="card-icon">
+        🔒
+      </div>
+
+      <h2>
+        Privacy
+      </h2>
+
+      <p>
+        We respect user privacy and aim to minimize unnecessary data
+        collection.
+      </p>
+
+      <p>
+        For information about how information is handled, please
+        review our
+        <a href="index.html">
+          Privacy Policy
+        </a>.
+      </p>
+
+    </section>
+
+
+    <!-- Contact -->
+
+    <section class="card">
+
+      <div class="card-icon">
+        💬
+      </div>
+
+      <h2>
+        Contact Us
+      </h2>
+
+      <div class="contact">
+
+        <strong>App Name:</strong>
+        AIFormFiller
+        <br>
+
+        <strong>Developer:</strong>
+        Aman
+        <br>
+
+        <strong>Email:</strong>
+        <a href="mailto:aman35ali786@gmail.com">
+          aman35ali786@gmail.com
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+      © 2026 AIFormFiller. All rights reserved.
+    </footer>
+
+  </main>
 
 </body>
 </html>
